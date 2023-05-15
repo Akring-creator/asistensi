@@ -21,7 +21,11 @@ NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
 maxZoom: 16
 });
 
-var baseLayers = {'Google Satellite Hybrid': GoogleSatelliteHybrid}; 
+var baseLayers = {
+ 'Google Satellite Hybrid': GoogleSatelliteHybrid,
+ 'Esri_NatGeoWorldMap':Esri_NatGeoWorldMap
+};
+
 var overlayLayers = {} 
 L.control.layers(baseLayers, overlayLayers, {collapsed: true}).addTo(map);
 
