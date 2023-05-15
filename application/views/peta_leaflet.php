@@ -16,8 +16,7 @@ attribution: 'Latihan Web GIS'
 }).addTo(map);
 
 var Esri_NatGeoWorldMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
-attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme,
-NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
 maxZoom: 16
 });
 
@@ -31,7 +30,7 @@ attribution: 'Latihan Web GIS'
 var baseLayers = {
  'Google Satellite Hybrid': GoogleSatelliteHybrid,
  'Esri_NatGeoWorldMap':Esri_NatGeoWorldMap,
- 'Google Maps':GoogleMaps,
+ 'Google Maps': GoogleMaps,
  'Goole Roads' : GoogleRoads
 };
 
