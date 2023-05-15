@@ -3,6 +3,10 @@
  <div id="map" style="width: 100%; height: 530px; color:black;"></div> 
 </div> 
 <script> 
+
+var prov = new L.LayerGroup();
+
+
 var map = L.map('map', { 
  center: [-1.7912604466772375, 116.42311966554416], 
  zoom: 5, 
@@ -32,6 +36,11 @@ var baseLayers = {
  'Esri_NatGeoWorldMap':Esri_NatGeoWorldMap,
  'Google Maps': GoogleMaps,
  'Goole Roads' : GoogleRoads
+};
+
+var groupedOverlays = {
+        "Peta Dasar":{
+        'Ibu Kota Provinsi' :prov}
 };
 
 var overlayLayers = {} 
@@ -98,6 +107,20 @@ north.onAdd = function(map) {
         div.innerHTML = '<img src="<?=base_url()?>assets/arah-mata-angin.png"style=width:200px;>'; 
         return div; } 
         north.addTo(map);
+
+        $.getJSON("<?=base_url()?>assets/provinsi.geojson",function(data){
+        var ratIcon = L.icon({
+        iconUrl: '<?=base_url()?>assets/Marker-1.png',
+        iconSize: [12,10]
+        });
+        L.geoJson(data,{
+        pointToLayer: function(feature,latlng){
+        var marker = L.marker(latlng,{icon: ratIcon});
+        marker.bindPopup(feature.properties.CITY_NAME);
+        return marker;
+        }
+        }).addTo(prov);
+        });
 
 </script>
 
