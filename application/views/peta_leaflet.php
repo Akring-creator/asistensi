@@ -30,7 +30,9 @@ attribution: 'Latihan Web GIS'
 
 var baseLayers = {
  'Google Satellite Hybrid': GoogleSatelliteHybrid,
- 'Esri_NatGeoWorldMap':Esri_NatGeoWorldMap
+ 'Esri_NatGeoWorldMap':Esri_NatGeoWorldMap,
+ 'Google Maps':GoogleMaps,
+ 'Goole Roads' : GoogleRoads
 };
 
 var overlayLayers = {} 
