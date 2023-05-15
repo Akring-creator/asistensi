@@ -108,17 +108,17 @@ north.onAdd = function(map) {
         north.addTo(map);
 
         $.getJSON("<?=base_url()?>assets/provinsi.geojson",function(data){
-        var ratIcon = L.icon({
-        iconUrl: '<?=base_url()?>assets/Marker-1.png',
-        iconSize: [12,10]
+                var ratIcon = L.icon({
+                iconUrl: '<?=base_url()?>assets/Marker-1.png',
+                iconSize: [12,10]
         });
-        L.geoJson(data,{
-        pointToLayer: function(feature,latlng){
-        var marker = L.marker(latlng,{icon: ratIcon});
-        marker.bindPopup(feature.properties.CITY_NAME);
-        return marker;
+                L.geoJson(data,{
+                pointToLayer: function(feature,latlng){
+                var marker = L.marker(latlng,{icon: ratIcon});
+                marker.bindPopup(feature.properties.CITY_NAME);
+                return marker;
         }
-        }).addTo(prov);
+          }).addTo(prov);
         });
 
 </script>
